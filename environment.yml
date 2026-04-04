@@ -1,0 +1,26 @@
+name: datos
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # 🔹 Python (versión estable recomendada)
+  - python=3.12
+
+  # 📓 Entorno de trabajo
+  - jupyter
+
+  # 📊 Análisis de datos
+  - pandas
+  - polars
+  - matplotlib
+
+  # 🌐 API
+  - fastapi
+  - uvicorn
+
+  # 🔧 Librerías adicionales (van por pip)
+  - pip
+  - pip:
+      # Estas son estándar de Python (no se instalan pero las documentamos)
+      - python-dateutil

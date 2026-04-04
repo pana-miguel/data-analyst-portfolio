@@ -95,5 +95,3 @@ conda clean --packages                   # Eliminar paquetes no usados
 
 ---
 
-✍️ **Autor:** Miguel Sierra  
-📅 **Última actualización:** Agosto 2025
