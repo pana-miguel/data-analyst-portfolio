@@ -84,7 +84,7 @@ El repositorio está organizado por áreas de trabajo para reflejar las diferent
   - [guia del uso de jupyter notebooks](./herramientas-comandos/comandos-jupyter.ipynb)
   - [guia del uso de numpy](./herramientas-comandos/comandos-numpy.ipynb)
   - [guia de pandas](./herramientas-comandos/comandos-pandas.ipynb)
-  - [guia de pandas](./herramientas-comandos/comandos-polars.ipynb)
+  - [guia de polars](./herramientas-comandos/comandos-polars.ipynb)
   - [guia del uso y creacion de matrices](./herramientas-comandos/ejemplos-matrices-numpy.ipynb)
   - [funciones o consultas DAX en powerBI](./herramientas-comandos/funciones-dax-powerbi.md)
   - [guia de comandos de git y github](./herramientas-comandos/git-github.md)
