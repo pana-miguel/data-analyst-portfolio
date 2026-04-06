@@ -72,11 +72,11 @@ El repositorio está organizado por áreas de trabajo para reflejar las diferent
 1. **Visualizacion/**  
   Contiene trabajos enfocados en la creación de gráficos y dashboards utilizando herramientas como Power BI, Looker Studio y Matplotlib.
 
-2. **Procesos ETL/**  
-  Incluye procesos de extracción, limpieza y transformación de datos utilizando principalmente Python, Pandas y Polars.
+2. **Procesos ETL y analisis/**  
+  Incluye procesos de extracción, limpieza y transformación de datos utilizando principalmente Python, Pandas y Polars al igual que entender la informacion que vamos a utilizar y como la vamos a usar.
 
-3. **Analisis/**  
-  Se enfoca en el análisis exploratorio de datos (EDA), identificación de patrones y generación de insights.
+3. **Base de datos**  
+  Se enfoca en mostrar la gestion o consultas de informacion que se hacen en una base de datos.
 
 4. **Herramientas/**  
   Espacio dedicado a la práctica y aprendizaje del uso de diferentes tecnologías, librerías y servicios relacionados con el análisis de datos.
@@ -89,7 +89,7 @@ El repositorio está organizado por áreas de trabajo para reflejar las diferent
   - [funciones o consultas DAX en powerBI](./herramientas-comandos/funciones-dax-powerbi.md)
   - [guia de comandos de git y github](./herramientas-comandos/git-github.md)
 
-5. **proyectos/**    
+5. **Proyectos/**    
   Contiene proyectos completos donde se integran todas las etapas del proceso de datos: ETL, análisis y visualización, aplicados a casos más cercanos a escenarios reales.
 ---
 
