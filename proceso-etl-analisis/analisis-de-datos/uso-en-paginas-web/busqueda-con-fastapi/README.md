@@ -19,6 +19,9 @@ uvicorn api:app --reload
 en este caso pueden devolverse hasta la carpeta deonde esta el frontend y abrir el html y poder utilizar la interfaz de la pagina web 
 
 ### 4. si se quiere usar el proyecto con todos los datos que se tienen pueden ir a la siguiente direccion [Carpeta con datos](https://drive.google.com/drive/folders/1tuugYsOuOAbYCUeusr2hhc7JakumANPW)
+
+nombre del archivo: **cedulas-simuladas-total.csv**
+
 esto mas que todo es para ver el rendimiento con los 4 millones de cedulas simuladas las cuales en este proyecto denotan que no hay un gran cambio en el rendimiento gracias a utilizar polars los datos se cargan de manera muy rapida por lo que no se nota lentitud en la pagina web 
 
 
