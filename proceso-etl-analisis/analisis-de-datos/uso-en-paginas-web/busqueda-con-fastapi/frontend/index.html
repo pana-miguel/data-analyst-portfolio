@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Buscar Cédula</title>
+
+<style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    input { padding: 5px; margin-right: 10px; }
+    button { padding: 5px 10px; }
+    table { border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #333; padding: 5px 10px; }
+    th { background-color: #f0f0f0; }
+</style>
+</head>
+
+<body>
+
+<h2>Buscar cédula</h2>
+<!-- cedula a buscar -->
+<input id="cedula" placeholder="Digite la cédula">
+<button onclick="buscar()">Buscar</button>
+<div id="resultado" style="margin-top:30px;"></div>
+
+<hr>
+
+<!-- Sección para mostrar los primeros registros -->
+<h3>Primeros 10 registros</h3>
+<div id="primeros10"></div>
+
+<script>
+const API = "http://127.0.0.1:8000"
+
+// burcar cedulas
+async function buscar() {
+
+    // Obtengo el valor del input y le quito espacios
+    const ced = document.getElementById("cedula").value.trim()
+    if (!ced) return
+    try {
+        // Hago la petición a la API
+        const res = await fetch(`${API}/buscar/${ced}`)
+        // Verifico si hubo error HTTP
+        if (!res.ok) throw new Error("Error HTTP")
+        // Convierto la respuesta a JSON
+        const json = await res.json()
+        // Si no existe la cédula o no hay datos
+        if (!json.existe || json.data.length === 0) {
+            document.getElementById("resultado").innerHTML =
+                "<b>No existe</b>"
+            return
+        }
+        // Tomo la primera fila del resultado
+        const fila = json.data[0]
+        // Empiezo a construir la tabla HTML
+        let html = "<h3>Resultado</h3><table>"
+        // Recorro cada campo del objeto
+        for (let k in fila) {
+            html += `<tr><td>${k}</td><td>${fila[k]}</td></tr>`
+        }
+
+        html += "</table>" 
+
+        // Mostrar resultados en el HTML
+        document.getElementById("resultado").innerHTML = html
+
+    } catch (err) {
+        // Si falla la conexión o la API
+        console.error(err)
+        document.getElementById("resultado").innerHTML =
+            "<b>Error al conectarse con el servidor</b>"
+    }
+}
+
+async function cargarPrimeros() {
+
+    try {
+        // petición a la API
+        const res = await fetch(`${API}/primeros`)
+        if (!res.ok) throw new Error("Error HTTP")
+        const data = await res.json()
+        if (data.length === 0) {
+            document.getElementById("primeros10").innerHTML =
+                "<b>No hay registros</b>"
+            return
+        }
+
+        // Construyo la tabla
+        let html = "<table><tr>"
+
+        // Cabeceras de la tabla (columnas)
+        for (let k in data[0]) {
+            html += `<th>${k}</th>`
+        }
+
+        html += "</tr>"
+
+        // Filas de la tabla
+        for (let fila of data) {
+            html += "<tr>"
+            for (let v of Object.values(fila)) {
+                html += `<td>${v}</td>`
+            }
+            html += "</tr>"
+        }
+
+        html += "</table>"
+        document.getElementById("primeros10").innerHTML = html
+
+    } catch (err) {
+        // Manejo de errores
+        console.error(err)
+        document.getElementById("primeros10").innerHTML =
+            "<b>Error al conectarse con el servidor</b>"
+    }
+}
+
+
+
+// Cuando se carga la página, llamo esta función
+// para mostrar los primeros 10 registros
+cargarPrimeros()
+
+</script>
+
+</body>
+</html>
