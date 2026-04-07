@@ -1,6 +1,28 @@
 # Proyecto: Búsqueda de Cédulas con FastAPI + Frontend HTML
 
-## 📌 Descripción
+## ▶️ Cómo ejecutar el proyecto
+
+### 1. En una nueva terminal coloca el siguiente comando 
+
+``` bash
+cd proceso-etl-analisis/analisis-de-datos/otros-usos/busqueda-con-fastapi/backend
+```
+
+### 2. activa el backend 
+
+``` bash
+uvicorn api:app --reload
+```
+
+### 3. Ejecutar el frontend
+
+en este caso pueden devolverse hasta la carpeta deonde esta el frontend y abrir el html y poder utilizar la interfaz de la pagina web 
+
+### 4. si se quiere usar el proyecto con todos los datos que se tienen pueden ir a la siguiente direccion [Carpeta con datos](https://drive.google.com/drive/folders/1tuugYsOuOAbYCUeusr2hhc7JakumANPW)
+esto mas que todo es para ver el rendimiento con los 4 millones de cedulas simuladas las cuales en este proyecto denotan que no hay un gran cambio en el rendimiento gracias a utilizar polars los datos se cargan de manera muy rapida por lo que no se nota lentitud en la pagina web 
+
+
+## 📌 Descripción del proyecto
 
 Este proyecto consiste en una aplicación web simple que permite buscar
 información de cédulas a partir de un archivo CSV.
@@ -17,7 +39,6 @@ El sistema está dividido en dos partes:
 
 -   Python
 -   FastAPI
--   Uvicorn
 -   Polars
 -   HTML, CSS, JavaScript
 
@@ -33,90 +54,6 @@ El sistema está dividido en dos partes:
 
 ------------------------------------------------------------------------
 
-## 📂 Estructura básica
 
-    backend/
-     ├── api.py
-     ├── cedulas-simuladas-total.csv
-    frontend/
-     ├── index.html
-
-------------------------------------------------------------------------
-
-## ▶️ Cómo ejecutar el proyecto
-
-### 1. Activar entorno virtual (opcional pero recomendado)
-
-``` bash
-conda activate py14
 ```
 
-### 2. Instalar dependencias
-
-``` bash
-pip install fastapi uvicorn polars
-```
-
-### 3. Ejecutar el backend
-
-Ubícate en la carpeta donde está `api.py`:
-
-``` bash
-uvicorn api:app --reload
-```
-
-Luego abre en el navegador:
-
-    http://127.0.0.1:8000/docs
-
-------------------------------------------------------------------------
-
-### 4. Ejecutar el frontend
-
-Abre el archivo `index.html` en tu navegador.
-
-------------------------------------------------------------------------
-
-## 🔍 Endpoints disponibles
-
-### Buscar cédula
-
-    GET /buscar/{cedula}
-
-### Primeros registros
-
-    GET /primeros
-
-------------------------------------------------------------------------
-
-## 💡 ¿Qué puedes hacer con este proyecto?
-
--   Convertirlo en una aplicación más completa
--   Conectarlo con Angular o React
--   Reemplazar el CSV por una base de datos
--   Mejorar el diseño visual
--   Implementar autenticación
--   Desplegarlo en internet (Render, Vercel, etc.)
-
-------------------------------------------------------------------------
-
-## 🧠 Aprendizajes clave
-
--   Cómo crear APIs con FastAPI
--   Cómo consumir APIs con JavaScript
--   Manejo de datos con Polars
--   Integración backend + frontend
-
-------------------------------------------------------------------------
-
-## 📌 Nota
-
-Asegúrate de que el archivo CSV esté en la misma ruta que `api.py` o
-ajusta la ruta correctamente.
-
-------------------------------------------------------------------------
-
-## 👨‍💻 Autor
-
-Proyecto desarrollado como práctica de integración de datos y desarrollo
-web.

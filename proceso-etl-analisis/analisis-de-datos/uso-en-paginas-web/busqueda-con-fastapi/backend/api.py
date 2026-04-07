@@ -1,4 +1,3 @@
-# Importo FastAPI para crear la API
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import polars as pl
@@ -15,8 +14,8 @@ app.add_middleware(
     allow_methods=["*"],   # Permitir todos los métodos (GET, POST, etc.)
     allow_headers=["*"],  
 )
-
-archivo = pl.read_csv("cedulas-simuladas-total1.csv")
+# si se quiere utilizar las cedutas completas el csv se llamaria "cedulas-simuladas-total.csv" y se debe cambiar el nombre en la línea siguiente
+archivo = pl.read_csv("cedulas-simuladas-total1.csv") # tambien toca colocar los datos csv en la misma carpeta que este script
 
 # Endpoint para buscar una cédula específica
 @app.get("/buscar/{cedula}")
