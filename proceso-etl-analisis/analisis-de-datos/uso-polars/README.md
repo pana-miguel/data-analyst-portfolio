@@ -14,6 +14,8 @@ Además, el procesador del equipo permite aprovechar herramientas modernas como 
 
 ## 🚀 Polars vs Pandas (enfoque OLTP vs OLAP)
 
+![Texto alternativo](../../../elementos-multimedia/oltp-vs-olap.png)
+
 ### 🧾 OLTP (procesamiento transaccional)
 
 Operaciones rápidas, simples y en tiempo real

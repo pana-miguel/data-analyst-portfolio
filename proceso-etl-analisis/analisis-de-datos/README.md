@@ -16,8 +16,8 @@ A través del análisis, los datos pasan de ser simples registros a convertirse 
 - Pandas
 - Polars
 - NumPy
-- SQL
 - Matplotlib (para la generación de insights a través de visualizaciones)
+- csv
 
 ## 🎯 Objetivo
 
